@@ -112,6 +112,43 @@
     counters.forEach(runCounter);
   }
 
+  /* ---------- Skill-Level-Punkte ---------- */
+  document.querySelectorAll('.chips li[data-level]').forEach(li => {
+    const level = parseInt(li.dataset.level, 10) || 0;
+    const wrap = document.createElement('span');
+    wrap.className = 'skill-level';
+    for (let i = 0; i < 3; i++) {
+      const dot = document.createElement('i');
+      if (i < level) dot.classList.add('filled');
+      wrap.appendChild(dot);
+    }
+    li.appendChild(wrap);
+  });
+
+  /* ---------- Projekt-Details aufklappen ---------- */
+  document.querySelectorAll('.project__toggle').forEach(btn => {
+    const panel = btn.nextElementSibling;
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      panel.classList.toggle('open', !open);
+      btn.firstChild.textContent = open ? 'Mehr erfahren ' : 'Weniger anzeigen ';
+    });
+  });
+
+  /* ---------- Magnetischer Button-Hover ---------- */
+  if (window.matchMedia('(pointer: fine)').matches && !prefersReduced) {
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const x = (e.clientX - r.left - r.width / 2) * 0.25;
+        const y = (e.clientY - r.top - r.height / 2) * 0.35;
+        btn.style.transform = `translate(${x}px, ${y}px)`;
+      });
+      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+    });
+  }
+
   /* ---------- Projekt-Karten: Glow folgt der Maus ---------- */
   document.querySelectorAll('.project').forEach(card => {
     card.addEventListener('mousemove', (e) => {

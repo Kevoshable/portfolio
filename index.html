@@ -11,6 +11,7 @@
   <meta property="og:title" content="Kevin Junger — Portfolio" />
   <meta property="og:description" content="Angehender Fachinformatiker für Systemintegration. Technik ist nicht mein Beruf — sie ist mein Leben." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo.svg" />
 
   <title>Kevin Junger — Portfolio · Fachinformatiker</title>
 
@@ -18,7 +19,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='sans-serif' font-weight='bold'>%F0%9F%92%A0</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="mask-icon" href="assets/logo.svg" color="#22d3ee" />
 </head>
 <body>
   <!-- Animierter Hintergrund -->
@@ -31,7 +33,7 @@
   <!-- Navigation -->
   <header class="nav" id="nav">
     <a href="#hero" class="nav__logo" aria-label="Startseite">
-      <span class="nav__logo-mark">KJ</span>
+      <img src="assets/logo.svg" alt="" class="nav__logo-mark" width="40" height="40" />
     </a>
     <nav class="nav__links" aria-label="Hauptnavigation">
       <a href="#about">Über mich</a>
@@ -143,35 +145,39 @@
           <div class="skill-group__icon">&lt;/&gt;</div>
           <h3>Programmierung</h3>
           <ul class="chips">
-            <li>C#</li><li>Python</li><li>JavaScript</li>
-            <li>HTML</li><li>CSS</li><li>SQL</li>
+            <li data-level="3">C#</li><li data-level="2">Python</li><li data-level="3">JavaScript</li>
+            <li data-level="3">HTML</li><li data-level="3">CSS</li><li data-level="2">SQL</li>
           </ul>
         </article>
         <article class="skill-group reveal">
           <div class="skill-group__icon">⚙️</div>
           <h3>Tools & Engines</h3>
           <ul class="chips">
-            <li>Unity</li><li>Git</li><li>GitHub</li>
-            <li>Datenbanken</li><li>KI als Werkzeug</li>
+            <li data-level="3">Unity</li><li data-level="2">Git</li><li data-level="2">GitHub</li>
+            <li data-level="2">Datenbanken</li><li data-level="3">KI als Werkzeug</li>
           </ul>
         </article>
         <article class="skill-group reveal">
           <div class="skill-group__icon">🖥️</div>
           <h3>Systeme</h3>
           <ul class="chips">
-            <li>Windows</li><li>Linux (Live-Systeme)</li>
-            <li>Systemeinrichtung</li><li>Troubleshooting</li>
+            <li data-level="3">Windows</li><li data-level="2">Linux (Live-Systeme)</li>
+            <li data-level="3">Systemeinrichtung</li><li data-level="3">Troubleshooting</li>
           </ul>
         </article>
         <article class="skill-group reveal">
           <div class="skill-group__icon">🔧</div>
           <h3>Hardware</h3>
           <ul class="chips">
-            <li>PC-Building</li><li>Reparatur (Laptop/Handy)</li>
-            <li>Display- & Kameratausch</li><li>Drucker-Wartung</li>
+            <li data-level="3">PC-Building</li><li data-level="3">Reparatur (Laptop/Handy)</li>
+            <li data-level="2">Display- & Kameratausch</li><li data-level="2">Drucker-Wartung</li>
           </ul>
         </article>
       </div>
+      <p class="skills__legend reveal">
+        <span class="skill-level"><i class="filled"></i><i class="filled"></i><i class="filled"></i></span> sicher &nbsp;·&nbsp;
+        <span class="skill-level"><i class="filled"></i><i class="filled"></i><i></i></span> praxiserprobt
+      </p>
     </section>
 
     <!-- PROJEKTE -->
@@ -217,6 +223,11 @@
             Server-Management aus einer Hand.
           </p>
           <ul class="project__tech"><li>JavaScript</li><li>APIs</li><li>Automatisierung</li></ul>
+          <button class="project__toggle" aria-expanded="false">Mehr erfahren <span>↓</span></button>
+          <div class="project__more">
+            <p>Von einfachen Befehlen bis zu automatisierter Moderation — Warnsystem, Rollenverwaltung,
+            Anti-Spam. Dabei habe ich gelernt, mit Events, APIs und asynchronem Code umzugehen.</p>
+          </div>
         </article>
 
         <article class="project reveal">
@@ -229,6 +240,12 @@
             eingesetzt, da Mobile-Entwicklung Neuland war.
           </p>
           <ul class="project__tech"><li>Android</li><li>Health-Tracking</li><li>KI-gestützt</li></ul>
+          <button class="project__toggle" aria-expanded="false">Mehr erfahren <span>↓</span></button>
+          <div class="project__more">
+            <p>Mobile Entwicklung war für mich absolutes Neuland. Statt aufzugeben, habe ich KI gezielt
+            als Lern- und Recherchewerkzeug eingesetzt — am Ende stand eine App, die meinem Vater im
+            Alltag wirklich geholfen hat. Genau dieses „ich probiere es trotzdem" treibt mich an.</p>
+          </div>
         </article>
 
         <article class="project reveal">
@@ -240,6 +257,13 @@
             Nutzungsbedingungen umgesetzt.
           </p>
           <ul class="project__tech"><li>Riot API</li><li>Overlay</li><li>TOS-konform</li></ul>
+          <button class="project__toggle" aria-expanded="false">Mehr erfahren <span>↓</span></button>
+          <div class="project__more">
+            <p>Das Overlay hat relevante Spieldaten automatisch erfasst und aufbereitet, um Entscheidungen
+            zu erleichtern — technisch nicht unähnlich zu Dashboards. Als mein Interesse am Spiel
+            nachließ, habe ich es pausiert, aber die Grundlagen zu Overlays, API-Anbindung und
+            Datenverarbeitung sitzen.</p>
+          </div>
         </article>
 
         <article class="project reveal">
@@ -250,6 +274,12 @@
             Arbeit mit <strong>Datenbanken und SQL</strong> — vom Skript bis zur Datenhaltung.
           </p>
           <ul class="project__tech"><li>Python</li><li>SQL</li><li>Datenbanken</li></ul>
+          <button class="project__toggle" aria-expanded="false">Mehr erfahren <span>↓</span></button>
+          <div class="project__more">
+            <p>Python war für mich immer das Werkzeug, mit dem ich schnell etwas ausprobieren konnte,
+            ohne mich in Boilerplate zu verlieren — von Automatisierungs-Skripten bis zu ersten
+            Gehversuchen mit relationalen Datenbanken.</p>
+          </div>
         </article>
 
         <article class="project reveal">
@@ -261,6 +291,12 @@
             Reparaturen: Laptop-Displays, Handy-Bildschirme und -Kameras, Drucker-Wartung.
           </p>
           <ul class="project__tech"><li>Hardware</li><li>Diagnose</li><li>Reparatur</li></ul>
+          <button class="project__toggle" aria-expanded="false">Mehr erfahren <span>↓</span></button>
+          <div class="project__more">
+            <p>In meinem Umfeld bin ich seit Jahren der erste Ansprechpartner bei technischen Problemen —
+            vom kompletten PC-Aufbau über den Tausch eines Laptop-Displays bis zur Drucker-Diagnose.
+            Diese Praxis gibt mir ein Gefühl für Hardware, das man nicht nur aus Büchern lernt.</p>
+          </div>
         </article>
       </div>
     </section>

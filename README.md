@@ -3,8 +3,7 @@
 Persönliche Portfolio-Website zur Bewerbung um einen Ausbildungsplatz als
 **Fachinformatiker für Systemintegration**.
 
-🔗 **Live-Website:** _(nach Aktivierung von GitHub Pages hier eintragen)_
-`https://kevoshable.github.io/portfolio/`
+🔗 **Live-Website:** https://kevoshable.github.io/portfolio/
 
 ---
 

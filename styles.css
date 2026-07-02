@@ -357,6 +357,12 @@ em { color: var(--accent); font-style: normal; }
   margin-top: 2rem;
 }
 .about__text p { color: var(--muted); margin-bottom: 1.2rem; font-size: 1.06rem; }
+.about__honesty {
+  border-left: 2px solid var(--accent);
+  padding: 0.9rem 0 0.9rem 1.2rem;
+  background: linear-gradient(90deg, rgba(34,211,238,0.06), transparent 60%);
+  border-radius: 0 10px 10px 0;
+}
 .about__card {
   align-self: start;
   background: var(--surface);
@@ -436,6 +442,15 @@ em { color: var(--accent); font-style: normal; }
 }
 .skill-group:hover .chips li { color: var(--text); }
 
+.chip-tag {
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  color: var(--accent-2);
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  padding: .1rem .45rem;
+  border-radius: 100px;
+}
 .skill-level { display: inline-flex; gap: 2px; }
 .skill-level i {
   width: 5px; height: 5px;
@@ -457,6 +472,14 @@ em { color: var(--accent); font-style: normal; }
 .skills__legend .skill-level i.filled { background: var(--accent); }
 
 /* ===================== PROJEKTE ===================== */
+.projects__subhead {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 2.4rem 0 1.2rem;
+}
+.projects__subhead:first-of-type { margin-top: 0; }
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -552,6 +575,16 @@ em { color: var(--accent); font-style: normal; }
   padding: .3rem .8rem;
   border-radius: 100px;
   font-weight: 600;
+}
+.project--wip {
+  background: linear-gradient(135deg, rgba(168,85,247,0.07), rgba(99,102,241,0.05));
+  border-color: rgba(168, 85, 247, 0.28);
+  border-style: dashed;
+}
+.project__badge--wip {
+  background: none;
+  color: var(--accent-2);
+  border: 1px solid rgba(168, 85, 247, 0.5);
 }
 .project__links { margin-top: 1.4rem; }
 .project__visual {

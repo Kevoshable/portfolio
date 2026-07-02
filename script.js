@@ -67,9 +67,9 @@
   if (rotator) {
     const roles = [
       'Fachinformatiker für Systemintegration',
-      'Problemlöser aus Leidenschaft',
-      'Technik-Enthusiast seit der Kindheit',
-      'Anwendungsentwickler'
+      'Anwendungsentwickler',
+      'Autodidakt seit dem 9. Lebensjahr',
+      'PC-Bastler seit dem 13. Lebensjahr'
     ];
     if (prefersReduced) {
       rotator.textContent = roles[0];

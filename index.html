@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio von Kevin Junger — angehender Fachinformatiker für Systemintegration. Seit Kindheit begeistert von Technik, Programmierung und Hardware." />
+  <meta name="author" content="Kevin Junger" />
+  <meta name="theme-color" content="#0a0a12" />
+
+  <!-- Open Graph (schöne Vorschau, wenn der Link geteilt wird) -->
+  <meta property="og:title" content="Kevin Junger — Portfolio" />
+  <meta property="og:description" content="Angehender Fachinformatiker für Systemintegration. Technik ist nicht mein Beruf — sie ist mein Leben." />
+  <meta property="og:type" content="website" />
+
+  <title>Kevin Junger — Portfolio · Fachinformatiker</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='sans-serif' font-weight='bold'>%F0%9F%92%A0</text></svg>" />
+</head>
+<body>
+  <!-- Animierter Hintergrund -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- Ladebalken oben -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav__logo" aria-label="Startseite">
+      <span class="nav__logo-mark">KJ</span>
+    </a>
+    <nav class="nav__links" aria-label="Hauptnavigation">
+      <a href="#about">Über mich</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projekte</a>
+      <a href="#journey">Werdegang</a>
+      <a href="#contact" class="nav__cta">Kontakt</a>
+    </nav>
+    <button class="nav__burger" id="nav-burger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__inner">
+        <p class="hero__eyebrow reveal">
+          <span class="status-dot"></span> Auf der Suche nach einem Ausbildungsplatz
+        </p>
+        <h1 class="hero__title">
+          <span class="reveal" style="--d:.05s">Kevin</span>
+          <span class="reveal hero__title-accent" style="--d:.15s">Junger</span>
+        </h1>
+        <p class="hero__role reveal" style="--d:.25s">
+          <span class="hero__role-static">Angehender</span>
+          <span class="hero__role-rotator" id="role-rotator" aria-live="polite"></span>
+        </p>
+        <p class="hero__lead reveal" style="--d:.35s">
+          Seit über 15 Jahren dreht sich mein Leben um Technik — vom ersten
+          selbstgeschriebenen Programm mit 9 bis zum eigenen Gaming-Setup, unzähligen
+          reparierten Geräten und aktuell C# in der Unity-Engine.
+          <strong>Technik ist für mich kein Job — sie ist Neugier, die nie aufhört.</strong>
+        </p>
+        <div class="hero__actions reveal" style="--d:.45s">
+          <a href="#projects" class="btn btn--primary">Projekte ansehen</a>
+          <a href="https://github.com/Kevoshable" target="_blank" rel="noopener" class="btn btn--ghost">
+            <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+            GitHub
+          </a>
+        </div>
+        <div class="hero__stats reveal" style="--d:.55s">
+          <div class="stat"><span class="stat__num" data-count="15" data-suffix="+"></span><span class="stat__label">Jahre mit Technik</span></div>
+          <div class="stat"><span class="stat__num" data-count="20" data-suffix="+"></span><span class="stat__label">PCs gebaut & konfiguriert</span></div>
+          <div class="stat"><span class="stat__num" data-count="6" data-suffix=""></span><span class="stat__label">Sprachen & Techniken</span></div>
+        </div>
+      </div>
+      <a href="#about" class="hero__scroll" aria-label="Nach unten scrollen">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ÜBER MICH -->
+    <section class="section" id="about">
+      <div class="section__head reveal">
+        <span class="section__index">01</span>
+        <h2 class="section__title">Über mich</h2>
+      </div>
+      <div class="about">
+        <div class="about__text">
+          <p class="reveal">
+            Ich bin <strong>Kevin Junger</strong>, wohne im Raum <strong>Östringen</strong> und
+            möchte meine lebenslange Leidenschaft für IT endlich zum Beruf machen — als
+            <strong>Fachinformatiker für Systemintegration</strong>.
+          </p>
+          <p class="reveal">
+            Meinen ersten Kontakt zur IT hatte ich schon als Kind: Mein Vater arbeitete in einer
+            IT-Firma und legte mir die Technik quasi in die Wiege. Mit 8–9 Jahren saß ich bereits
+            an ersten kleinen Programmen — anfangs mit HTML, CSS und JavaScript, einfach um zu
+            <em>verstehen</em>, wie die Dinge funktionieren. Diese Neugier hat mich seitdem nie
+            wieder losgelassen.
+          </p>
+          <p class="reveal">
+            Über viele Jahre arbeitete ich im Lager — und nutzte meine private Zeit zuhause, oft
+            bis spät in die Nacht, zum Programmieren und Basteln. Discord-Bots, eine App für meinen
+            kranken Vater, Tools für Spiele, Experimente mit Python und Datenbanken. Parallel baute
+            ich ab 13 eigenständig PCs, richtete Systeme ein und reparierte alles, was mir in die
+            Hände kam: Laptops, Fernseher, Handys, Drucker.
+          </p>
+          <p class="reveal">
+            In meinem Umfeld bin ich <strong>bei jedem technischen Problem die Anlaufstelle Nr. 1</strong>.
+            Nicht, weil ich alles sofort weiß — sondern weil ich das tiefe Interesse und die Geduld
+            habe, mich auch stundenlang in ein Problem zu verbeißen, bis es gelöst ist. In der IT
+            gibt es kaum ein Thema, das mich <em>nicht</em> interessiert.
+          </p>
+        </div>
+        <aside class="about__card reveal">
+          <div class="about__card-row"><span>Name</span><strong>Kevin Junger</strong></div>
+          <div class="about__card-row"><span>Region</span><strong>Östringen</strong></div>
+          <div class="about__card-row"><span>Ziel</span><strong>Ausbildung Systemintegration</strong></div>
+          <div class="about__card-row"><span>Offen für</span><strong>Anwendungsentwicklung</strong></div>
+          <div class="about__card-row"><span>Motto</span><strong>„Bis es funktioniert."</strong></div>
+          <a href="#contact" class="about__card-btn">Kontakt aufnehmen →</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="section__head reveal">
+        <span class="section__index">02</span>
+        <h2 class="section__title">Skills & Technologien</h2>
+      </div>
+      <p class="section__lead reveal">
+        Über die Jahre autodidaktisch aufgebaut — quer durch Software, Systeme und Hardware.
+      </p>
+      <div class="skills">
+        <article class="skill-group reveal">
+          <div class="skill-group__icon">&lt;/&gt;</div>
+          <h3>Programmierung</h3>
+          <ul class="chips">
+            <li>C#</li><li>Python</li><li>JavaScript</li>
+            <li>HTML</li><li>CSS</li><li>SQL</li>
+          </ul>
+        </article>
+        <article class="skill-group reveal">
+          <div class="skill-group__icon">⚙️</div>
+          <h3>Tools & Engines</h3>
+          <ul class="chips">
+            <li>Unity</li><li>Git</li><li>GitHub</li>
+            <li>Datenbanken</li><li>KI als Werkzeug</li>
+          </ul>
+        </article>
+        <article class="skill-group reveal">
+          <div class="skill-group__icon">🖥️</div>
+          <h3>Systeme</h3>
+          <ul class="chips">
+            <li>Windows</li><li>Linux (Live-Systeme)</li>
+            <li>Systemeinrichtung</li><li>Troubleshooting</li>
+          </ul>
+        </article>
+        <article class="skill-group reveal">
+          <div class="skill-group__icon">🔧</div>
+          <h3>Hardware</h3>
+          <ul class="chips">
+            <li>PC-Building</li><li>Reparatur (Laptop/Handy)</li>
+            <li>Display- & Kameratausch</li><li>Drucker-Wartung</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJEKTE -->
+    <section class="section" id="projects">
+      <div class="section__head reveal">
+        <span class="section__index">03</span>
+        <h2 class="section__title">Projekte</h2>
+      </div>
+      <p class="section__lead reveal">
+        Ein Ausschnitt aus vielen Jahren Basteln, Bauen und Ausprobieren.
+      </p>
+
+      <div class="projects">
+        <!-- Featured -->
+        <article class="project project--featured reveal">
+          <div class="project__badge">Aktuelles Projekt</div>
+          <div class="project__body">
+            <h3 class="project__title">Unity-Spiel in C#</h3>
+            <p class="project__desc">
+              Mein aktuelles Herzensprojekt: Ich entwickle mich intensiv in <strong>C#</strong> und
+              der <strong>Unity-Engine</strong> weiter und baue ein eigenes Spiel. Hier fließt alles
+              zusammen — Logik, Struktur, Problemlösung und das ständige Lernen neuer Konzepte.
+            </p>
+            <ul class="project__tech">
+              <li>C#</li><li>Unity</li><li>Git</li><li>Game-Logik</li>
+            </ul>
+            <div class="project__links">
+              <a href="https://github.com/Kevoshable" target="_blank" rel="noopener" class="btn btn--small">Auf GitHub ansehen →</a>
+            </div>
+          </div>
+          <div class="project__visual" aria-hidden="true">
+            <div class="project__visual-inner">C#</div>
+          </div>
+        </article>
+
+        <!-- Grid -->
+        <article class="project reveal">
+          <div class="project__icon">🤖</div>
+          <h3 class="project__title">Discord-Bots</h3>
+          <p class="project__desc">
+            Mehrere Bots mit verschiedenen Funktionen — u. a. zur Unterstützung der
+            <strong>Moderation</strong> auf Servern. Automatisierung, Befehle und
+            Server-Management aus einer Hand.
+          </p>
+          <ul class="project__tech"><li>JavaScript</li><li>APIs</li><li>Automatisierung</li></ul>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__icon">💊</div>
+          <h3 class="project__title">Medikamenten- & Nährwert-Tracker</h3>
+          <p class="project__desc">
+            Eine lokale Android-App für meinen Vater während seiner Erkrankung — zum Tracken von
+            Medikamenten und Nährwerten wie <strong>Phosphor, Kalium und Wasser</strong>, um
+            wichtige Werte im grünen Bereich zu halten. KI habe ich gezielt als Werkzeug
+            eingesetzt, da Mobile-Entwicklung Neuland war.
+          </p>
+          <ul class="project__tech"><li>Android</li><li>Health-Tracking</li><li>KI-gestützt</li></ul>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__icon">🎮</div>
+          <h3 class="project__title">TFT Companion-Tool</h3>
+          <p class="project__desc">
+            Ein In-Game-Overlay für <strong>Teamfight Tactics</strong>, das Spielzüge und die
+            Team-Zusammenstellung vereinfacht — sauber innerhalb der Riot-API und deren
+            Nutzungsbedingungen umgesetzt.
+          </p>
+          <ul class="project__tech"><li>Riot API</li><li>Overlay</li><li>TOS-konform</li></ul>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__icon">🐍</div>
+          <h3 class="project__title">Python & Datenbanken</h3>
+          <p class="project__desc">
+            Diverse Experimente und kleinere Anwendungen in <strong>Python</strong> sowie erste
+            Arbeit mit <strong>Datenbanken und SQL</strong> — vom Skript bis zur Datenhaltung.
+          </p>
+          <ul class="project__tech"><li>Python</li><li>SQL</li><li>Datenbanken</li></ul>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__icon">🔧</div>
+          <h3 class="project__title">PC-Building & Reparaturen</h3>
+          <p class="project__desc">
+            Seit über 10 Jahren baue und konfiguriere ich PCs — inklusive eines eigenen
+            <strong>Gaming- & Streaming-Setups</strong> im vierstelligen Bereich. Dazu unzählige
+            Reparaturen: Laptop-Displays, Handy-Bildschirme und -Kameras, Drucker-Wartung.
+          </p>
+          <ul class="project__tech"><li>Hardware</li><li>Diagnose</li><li>Reparatur</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- WERDEGANG -->
+    <section class="section" id="journey">
+      <div class="section__head reveal">
+        <span class="section__index">04</span>
+        <h2 class="section__title">Mein Werdegang</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <span class="timeline__year">Mit 8–9 Jahren</span>
+          <h3>Der Anfang</h3>
+          <p>Erste Berührung mit Technik durch meinen Vater. Erste kleine Programme in HTML, CSS und JavaScript — reine Neugier.</p>
+        </div>
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <span class="timeline__year">Ab 13 Jahren</span>
+          <h3>Hardware wird Leidenschaft</h3>
+          <p>Eigenständiger Aufbau und Konfiguration von PCs. Erste Reparaturen an Laptops, Handys und Fernsehern.</p>
+        </div>
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <span class="timeline__year">Jahre danach</span>
+          <h3>Coden neben dem Lagerberuf</h3>
+          <p>Tagsüber im Lager, nachts am Code: Discord-Bots, Python, Datenbanken und die App für meinen Vater. Learning by Doing.</p>
+        </div>
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <span class="timeline__year">Heute</span>
+          <h3>C#, Unity & der nächste Schritt</h3>
+          <p>Aktuell vertiefe ich C# und die Unity-Engine. Jetzt will ich meine Leidenschaft zum Beruf machen — mit einer Ausbildung zum Fachinformatiker.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section class="section section--contact" id="contact">
+      <div class="contact reveal">
+        <span class="section__index">05</span>
+        <h2 class="contact__title">Lassen Sie uns reden.</h2>
+        <p class="contact__lead">
+          Sie suchen jemanden, der Technik nicht nur kann, sondern <em>lebt</em>?
+          Dann freue ich mich über Ihre Nachricht.
+        </p>
+        <div class="contact__grid">
+          <a href="mailto:kevin.junger@hotmail.com" class="contact__link">
+            <span class="contact__link-label">E-Mail</span>
+            <span class="contact__link-value">kevin.junger@hotmail.com</span>
+          </a>
+          <a href="https://github.com/Kevoshable" target="_blank" rel="noopener" class="contact__link">
+            <span class="contact__link-label">GitHub</span>
+            <span class="contact__link-value">github.com/Kevoshable</span>
+          </a>
+          <div class="contact__link contact__link--static">
+            <span class="contact__link-label">Region</span>
+            <span class="contact__link-value">Östringen</span>
+          </div>
+        </div>
+        <a href="mailto:kevin.junger@hotmail.com?subject=Ausbildung%20Fachinformatiker%20—%20Anfrage" class="btn btn--primary btn--big">
+          E-Mail schreiben
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Kevin Junger · Mit Neugier gebaut.</p>
+    <a href="#hero" class="footer__top">Nach oben ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
